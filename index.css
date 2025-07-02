@@ -12,3 +12,25 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.status-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #10A95B;
+    width: 352px;
+    height: 59px;
+    padding: 8px 0px 8px 0px;
+    border-radius: 4px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 20px;
+}
+
+.win-text {
+    margin: 0px;
+}
+
+#well-done {
+    font-size: 16px;
+}
