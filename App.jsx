@@ -4,9 +4,17 @@ import { languages } from "./languages"
 export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = React.useState("REACT")
     const word = currentWord.split("").map( (el,index) => <span className="letters" key={index}>{el}</span> )
+    
+    const [keys,setKeys] = React.useState([])
+    
+    const handleClick = (letter) => {
+        setKeys( 
+            prevKeys => prevKeys.includes(letter) ? prevKeys : [...prevKeys, letter]
+        )
+    }
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    const letters = alphabet.toUpperCase().split("").map( el => <button className="letters">{el}</button>)
+    const letters = alphabet.toUpperCase().split("").map( el => <button key={el} className="letters" onClick={() => handleClick(el)}>{el}</button>)
 
     const languagesChips = languages.map( (el) => 
         <div className="language-chip" style={{
