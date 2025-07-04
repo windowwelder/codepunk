@@ -2,6 +2,8 @@ import React from "react"
 import { languages } from "./languages"
 
 export default function AssemblyEndgame() {
+    const [currentWord, setCurrentWord] = React.useState("REACT")
+    const word = currentWord.split("").map( el => <span className="letters">{el}</span> )
     const languagesChips = languages.map( (el) => 
         <div className="language-chip" style={{
             backgroundColor: el.backgroundColor,
@@ -21,6 +23,9 @@ export default function AssemblyEndgame() {
             </div>
             <section className="chips-container">
                 {languagesChips}
+            </section>
+            <section className="word">
+                {word}
             </section>
         </main>
     )

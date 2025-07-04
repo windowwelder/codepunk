@@ -34,3 +34,18 @@ body {
 #well-done {
     font-size: 16px;
 }
+
+.chips-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1.5px;
+    max-width: 350px;
+    max-height: 51.5px;
+    margin: auto;
+}
+
+.language-chip {
+    border-radius: 3px;
+    padding: 4.5px;
+}
