@@ -71,3 +71,22 @@ section.word {
     font-size: 18px;
     font-weight: bold;
 }
+
+section.keyboard {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+section.keyboard > button {
+    width: 40px;
+    height: 40px;
+    opacity: 50%;
+    background-color: #FCBA29;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    font-family: "Hanken Grotesk", Arial, sans-serif;
+    font-weight: bold;
+}
