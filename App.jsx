@@ -1,20 +1,20 @@
 import React from "react"
 import { languages } from "./languages"
+import { clsx } from "clsx"
 
 export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = React.useState("REACT")
-    const word = currentWord.split("").map( (el,index) => <span className="letters" key={index}>{el}</span> )
-    
-    const [keys,setKeys] = React.useState([])
-    
-    const handleClick = (letter) => {
-        setKeys( 
-            prevKeys => prevKeys.includes(letter) ? prevKeys : [...prevKeys, letter]
-        )
-    }
+    const [guessedLetters, setGuessedLetters] = React.useState([])
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    const letters = alphabet.toUpperCase().split("").map( el => <button key={el} className="letters" onClick={() => handleClick(el)}>{el}</button>)
+
+    function addGuessedLetter(letter) {
+        setGuessedLetters(prevLetters =>
+            prevLetters.includes(letter) ?
+                prevLetters :
+                [...prevLetters, letter]
+        )
+    }
 
     const languagesChips = languages.map( (el) => 
         <div className="language-chip" style={{
@@ -24,6 +24,31 @@ export default function AssemblyEndgame() {
             {el.name}
         </div>
         )
+
+    const word = currentWord.split("").map( 
+        (el,index) => <span className="letters" key={index}>{el}</span> 
+        )
+         
+    const letters = alphabet.toUpperCase().split("").map(letter => {
+        const isGuessed = guessedLetters.includes(letter)
+        const isCorrect = isGuessed && currentWord.includes(letter)
+        const isWrong = isGuessed && !currentWord.includes(letter)
+        const className = clsx({
+            correct: isCorrect,
+            wrong: isWrong
+        })
+        
+        return (
+            <button
+                className={className}
+                key={letter}
+                onClick={() => addGuessedLetter(letter)}
+            >
+                {letter.toUpperCase()}
+            </button>
+        )
+    })
+
     return (
         <main>
             <header>
@@ -40,7 +65,7 @@ export default function AssemblyEndgame() {
                 {word}
             </section>
             <section className="keyboard">
-            {letters}
+                {letters}
             </section>
             <button className="new-game">New Game</button>
         </main>
