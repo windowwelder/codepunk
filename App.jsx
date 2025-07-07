@@ -20,13 +20,19 @@ export default function AssemblyEndgame() {
         )
     }
 
-    const languagesChips = languages.map( (el) => 
-        <div className="language-chip" style={{
+    const languagesChips = languages.map( (el,index) => 
+        {
+            const diff = wrongGuessCount - index > 0 ? wrongGuessCount - index : null;
+            const classNameLang = clsx({
+            "language-chip": !diff,
+            "lost": diff
+        });
+            return (<div className={classNameLang} style={{
             backgroundColor: el.backgroundColor,
             color: el.color
             }}>
             {el.name}
-        </div>
+        </div>)}
         )
 
     const word = currentWord.split("").map( 
