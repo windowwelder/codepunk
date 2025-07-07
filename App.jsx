@@ -6,6 +6,10 @@ export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = React.useState("REACT")
     const [guessedLetters, setGuessedLetters] = React.useState([])
 
+    let wrongGuessCount = guessedLetters.map(
+        letter => currentWord.includes(letter) ? true : false
+        ).filter( el => !el ).length;
+
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     function addGuessedLetter(letter) {
