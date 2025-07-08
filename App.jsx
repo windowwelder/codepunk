@@ -10,6 +10,8 @@ export default function AssemblyEndgame() {
         letter => currentWord.includes(letter) ? true : false
         ).filter( el => !el ).length;
 
+    const isGameOver = wrongGuessCount === languages.length - 1;
+
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     function addGuessedLetter(letter) {
@@ -77,7 +79,7 @@ export default function AssemblyEndgame() {
             <section className="keyboard">
                 {letters}
             </section>
-            <button className="new-game">New Game</button>
+            {isGameOver && <button className="new-game">New Game</button>}
         </main>
     )
 }
