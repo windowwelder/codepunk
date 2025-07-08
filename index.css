@@ -143,4 +143,10 @@ span.chip.lost::before {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.guessed {
+    color: #D9D9D9
+}
 
+.not-guessed {
+    color: #EC5D49
+}
