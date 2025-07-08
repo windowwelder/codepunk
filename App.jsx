@@ -4,7 +4,7 @@ import { clsx } from "clsx"
 import { getFarewellText } from "./utils"
 
 export default function AssemblyEndgame() {
-    const [currentWord, setCurrentWord] = React.useState("REACT")
+    const [currentWord, setCurrentWord] = React.useState(getRandomWord())
     const [guessedLetters, setGuessedLetters] = React.useState([])
 
     let wrongGuessCount = guessedLetters.map(
