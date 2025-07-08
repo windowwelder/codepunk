@@ -27,6 +27,15 @@ body {
     font-size: 20px;
 }
 
+section.game-status.won {
+    background-color: #10A95B;
+}
+
+section.game-status.lost {
+    background-color: #BA2A2A;
+}
+
+
 .win-text {
     margin: 0px;
 }

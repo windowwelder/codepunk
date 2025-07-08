@@ -63,6 +63,11 @@ export default function AssemblyEndgame() {
         )
     })
 
+    const gameStatusClass = clsx("game-status", {
+        won: isGameWon,
+        lost: isGameLost
+    })
+
     return (
         <main>
             <header>
@@ -70,7 +75,7 @@ export default function AssemblyEndgame() {
                 <p className="description">Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
             </header>
             {
-                <section className="game-status">
+                <section className={gameStatusClass}>
                     isGameWon ?
                         <> 
                         <h2>You win!</h2>
