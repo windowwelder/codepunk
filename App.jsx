@@ -4,7 +4,7 @@ import { clsx } from "clsx"
 import { getFarewellText } from "./utils"
 
 export default function AssemblyEndgame() {
-    const [currentWord, setCurrentWord] = React.useState(getRandomWord())
+    const [currentWord, setCurrentWord] = React.useState( () => getRandomWord())
     const [guessedLetters, setGuessedLetters] = React.useState([])
 
     let wrongGuessCount = guessedLetters.map(
@@ -108,6 +108,11 @@ export default function AssemblyEndgame() {
         }
     }
 
+    function resetGame() {
+        setCurrentWord(getRandomWord())
+        setGuessedLetters([])
+    }
+
     return (
         <main>
             <header>
@@ -147,7 +152,7 @@ export default function AssemblyEndgame() {
             <section className="keyboard">
                 {letters}
             </section>
-            {isGameOver && <button className="new-game">New Game</button>}
+            {isGameOver && <button className="new-game" onClick={resetGame}>New Game</button>}
         </main>
     )
 }
