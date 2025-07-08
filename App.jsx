@@ -60,6 +60,7 @@ export default function AssemblyEndgame() {
                 className={className}
                 key={letter}
                 onClick={() => addGuessedLetter(letter)}
+                disabled={isGameOver}
             >
                 {letter.toUpperCase()}
             </button>
@@ -122,9 +123,9 @@ export default function AssemblyEndgame() {
             <section className="word">
                 {word}
             </section>
-            {!isGameOver && <section className="keyboard">
+            <section className="keyboard">
                 {letters}
-            </section>}
+            </section>
             {isGameOver && <button className="new-game">New Game</button>}
         </main>
     )
