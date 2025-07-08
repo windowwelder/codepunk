@@ -1,6 +1,7 @@
 import React from "react"
 import { languages } from "./languages"
 import { clsx } from "clsx"
+import { getFarewellText } from "./utils"
 
 export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = React.useState("REACT")
@@ -13,6 +14,8 @@ export default function AssemblyEndgame() {
     const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
     const isGameLost = wrongGuessCount >= languages.length - 1
     const isGameOver = isGameWon || isGameLost
+
+    const isWrongGuess = guessedLetters.length > 0 ? !currentWord.includes(guessedLetters[guessedLetters.length - 1]) : false
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -65,12 +68,24 @@ export default function AssemblyEndgame() {
 
     const gameStatusClass = clsx("game-status", {
         won: isGameWon,
-        lost: isGameLost
+        lost: isGameLost,
+        farewell: !isGameOver && isWrongGuess
     })
 
-    function renderGameStatus() {
-        if (!isGameOver) {
-            return null
+    function renderGameStatus(language) {
+        if (!isGameOver && !isWrongGuess) {
+            return (
+                <>
+                    {null}
+                </>
+            )
+        }
+        else if (!isGameOver && isWrongGuess) {
+            return (
+                <>
+                    {getFarewellText(languages[wrongGuessCount - 1].name)}
+                </>
+                )
         }
 
         if (isGameWon) {
