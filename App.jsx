@@ -69,9 +69,21 @@ export default function AssemblyEndgame() {
                 <h1>Assembly: Endgame</h1>
                 <p className="description">Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
             </header>
-            <div className="status-section">
-                <p className="win-text">You win!</p><p className="win-text" id="well-done">Well done!🎉</p>
-            </div>
+            {isGameWon ? 
+                <section className="game-status">
+                    <h2>You win!</h2>
+                    <p>Well done! 🎉</p>
+                </section> :
+            isGameLost ? 
+                <section className="game-status">
+                    <h2>Game over!</h2>
+                    <p>You lose! Better start learning Assembly 😭</p>
+                </section> :
+                <section className="game-status">
+                    <h2></h2>
+                    <p></p>
+                </section>
+            }
             <section className="chips-container">
                 {languagesChips}
             </section>
