@@ -42,9 +42,31 @@ export default function AssemblyEndgame() {
         </div>)}
         )
 
-    const word = currentWord.split("").map( 
-        (el,index) => <span className="letters" key={index}>{ guessedLetters.includes(el) ? el.toUpperCase() : ""}</span> 
-        )
+        const classNameLetters = clsx(
+        {
+            "guessed": !isGameLost && guessedLetters.includes(letter),
+            "not-guessed": isGameLost && !guessedLetters.includes(letter),
+            "empty": !isGameLost && !guessedLetters.includes(letter)
+        }
+    )
+    
+    function showLettersOrNot(letter) {
+        if (!isGameLost && guessedLetters.includes(letter)) {
+            return letter.toUpperCase()
+        }
+        else if (isGameLost && !guessedLetters.includes(letter)) {
+            return letter.toUpperCase()
+        }
+        else {
+            return ""
+        }
+    }
+    
+    const word = currentWord.split("").map((letter, index) => (
+        <span key={index} className={classNameLetters}>
+            {showLettersOrNot(letter)}   
+        </span>
+    ))
          
     const letters = alphabet.toUpperCase().split("").map(letter => {
         const isGuessed = guessedLetters.includes(letter)
@@ -112,6 +134,8 @@ export default function AssemblyEndgame() {
         setCurrentWord(getRandomWord())
         setGuessedLetters([])
     }
+
+    
 
     return (
         <main>
