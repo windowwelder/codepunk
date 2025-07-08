@@ -122,9 +122,9 @@ export default function AssemblyEndgame() {
             <section className="word">
                 {word}
             </section>
-            <section className="keyboard">
+            {!isGameOver && <section className="keyboard">
                 {letters}
-            </section>
+            </section>}
             {isGameOver && <button className="new-game">New Game</button>}
         </main>
     )
