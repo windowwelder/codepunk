@@ -7,8 +7,8 @@ body {
     font-family: "Hanken Grotesk", Arial, sans-serif;
     background-color: #262626;
     color: #D9D9D9;
-    padding: 20px;
-    height: 100vh;
+    padding: 2rem;
+    height: 100%;
 }
 
 main {
@@ -22,14 +22,14 @@ header {
 }
 
 header > h1 {
-    font-size: 1.25rem;
+    font-size: 3.25rem;
     font-weight: 500;
     color: #F9F4DA;
 }
 
 header > p {
-    font-size: 0.875rem;
-    max-width: 350px;
+    font-size: 1.875rem;
+    max-width: 40rem;
     color: #8E8E8E;
 }
 
@@ -41,15 +41,15 @@ header > p {
     color: #F9F4DA;
     width: 100%;
     height: 100%;
-    max-width: 350px;
-    min-height: 60px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+    max-width: 40rem;
+    min-height: 6rem;
+    border-radius: 0.35rem;
+    margin-bottom: 2rem;
 }
 
 section.game-status.won {
     background-color: #10A95B;
-    min-height: 60px;
+    min-height: 6rem;
 }
 
 section.game-status.lost {
@@ -58,109 +58,43 @@ section.game-status.lost {
 
 section.game-status.farewell {
     background-color: #7A5EA7;
-    border: 1px dashed #323232;
+    border: 0.15rem dashed #323232;
 }
 
 section.game-status > h2 {
-    font-size: 1.25rem;
-    margin: 0px
+    font-size: 1.9rem;
+    margin: 0.4rem
 }
 
 section.game-status > p {
-    margin: 5px;
+    margin: 0rem;
+    font-size: 1.4rem;
 }
-
 
 .chips-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 1.5px;
-    max-width: 350px;
-    max-height: 51.5px;
+    gap: 0.5rem;
+    max-width: 48rem;
+    max-height: 30rem;
     margin: auto;
-}
-
-section.word {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2px;
-    margin-top: 30px;
-}
-
-section.word > span {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #F9F4DA;
-    background-color: #323232;
-    color: #F9F4DA;
-    font-family: "Hanken Grotesk";
-    font-size: 18px;
-    font-weight: bold;
-}
-
-section.word > span.missed-letter {
-    color: #EC5D49;
-}
-
-section.keyboard {
-    margin-top: 40px;
-    max-width: 550px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-}
-
-section.keyboard > button {
-    width: 40px;
-    height: 40px;
-    opacity: 50%;
-    background-color: #FCBA29;
-    border: 1px solid #D7D7D7;
-    border-radius: 4px;
-    font-family: "Hanken Grotesk", Arial, sans-serif;
-    font-weight: bold;
-}
-
-button.new-game {
-    background-color: #11B5E5;
-    border: 1px solid #D7D7D7;
-    border-radius: 4px;
-    width: 225px;
-    height: 40px;
-    padding: 6px 12px;
-    display: block;
-    margin-inline: auto;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-section.keyboard > button.correct {
-    background-color: #10A95B;
-}
-
-section.keyboard > button.wrong {
-    background-color: #EC5D49;
 }
 
 section.language-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 0.4rem;
     justify-content: center;
-    max-width: 350px;
-    margin-bottom: 36px;
+    max-width: 10rem;
+    margin-bottom: 4rem;
 }
 
 span.chip {
-    border-radius: 3px;
-    padding: 4.5px;
+    border-radius: 0.25rem;
+    padding: 1.4rem;
     position: relative;
+    font-size: 1.8rem;
 }
 
 span.chip.lost::before {
@@ -169,12 +103,81 @@ span.chip.lost::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 2rem;
     height: 100%;  
     width: 100%;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+section.word {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+section.word > span {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.2rem solid #F9F4DA;
+    background-color: #323232;
+    color: #F9F4DA;
+    font-family: "Hanken Grotesk";
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+section.word > span.missed-letter {
+    color: #EC5D49;
+}
+
+section.keyboard {
+    margin-top: 3rem;
+    max-width: 45rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+section.keyboard > button {
+    width: 5rem;
+    height: 5rem;
+    opacity: 65%;
+    background-color: #FCBA29;
+    border: 0.2rem solid #D7D7D7;
+    border-radius: 0.3rem;
+    font-family: "Hanken Grotesk", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.6rem;
+}
+
+button.new-game {
+    background-color: #11B5E5;
+    border: 0.15rem solid #D7D7D7;
+    border-radius: 4px;
+    width: 40rem;
+    height: 6rem;
+    padding: 1rem 2rem;
+    display: block;
+    margin-inline: auto;
+    cursor: pointer;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+section.keyboard > button.correct {
+    background-color: #10A95B;
+}
+
+section.keyboard > button.wrong {
+    background-color: #EC5D49;
 }
 
 .sr-only {
