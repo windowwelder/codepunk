@@ -1,11 +1,11 @@
 import React from "react"
 import { languages } from "./languages"
 import { clsx } from "clsx"
-import { getFarewellText } from "./utils"
+import { getFarewellText, getRandomWord } from "./utils"
 import Confetti from "react-confetti"
 
 export default function AssemblyEndgame() {
-    const [currentWord, setCurrentWord] = React.useState( () => getRandomWord())
+    const [currentWord, setCurrentWord] = React.useState( () => getRandomWord().toUpperCase())
     const [guessedLetters, setGuessedLetters] = React.useState([])
 
     let wrongGuessCount = guessedLetters.map(
@@ -17,6 +17,9 @@ export default function AssemblyEndgame() {
     const isGameOver = isGameWon || isGameLost
 
     const isWrongGuess = guessedLetters.length > 0 ? !currentWord.includes(guessedLetters[guessedLetters.length - 1]) : false
+
+    const lastGuessedLetter = guessedLetters[guessedLetters.length - 1] || ""
+    const numGuessesLeft = languages.length - 1 - wrongGuessCount
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -32,42 +35,34 @@ export default function AssemblyEndgame() {
         {
             const diff = wrongGuessCount - index > 0 ? wrongGuessCount - index : null;
             const classNameLang = clsx({
-            "language-chip": !diff,
+            "chip": !diff,
             "lost": diff
         });
-            return (<div className={classNameLang} style={{
-            backgroundColor: el.backgroundColor,
-            color: el.color
-            }}>
+        return (
+                <div
+                    key={index} 
+                    className={classNameLang}  
+                    style={{
+                        backgroundColor: el.backgroundColor,
+                        color: el.color
+                    }}>
             {el.name}
-        </div>)}
-        )
-
-        const classNameLetters = clsx(
-        {
-            "guessed": !isGameLost && guessedLetters.includes(letter),
-            "not-guessed": isGameLost && !guessedLetters.includes(letter),
-            "empty": !isGameLost && !guessedLetters.includes(letter)
+                </div>)
         }
     )
-    
-    function showLettersOrNot(letter) {
-        if (!isGameLost && guessedLetters.includes(letter)) {
-            return letter.toUpperCase()
+
+    const word = currentWord.split("").map((letter, index) => {
+        const shouldRevealLetter = isGameLost || guessedLetters.includes(letter)
+        const classNameLetters = clsx(
+            isGameLost && !guessedLetters.includes(letter) && "missed-letter"
+        )
+        return (
+            <span key={index} className={classNameLetters}>
+                {shouldRevealLetter ? letter.toUpperCase() : ""}
+            </span>
+            )
         }
-        else if (isGameLost && !guessedLetters.includes(letter)) {
-            return letter.toUpperCase()
-        }
-        else {
-            return ""
-        }
-    }
-    
-    const word = currentWord.split("").map((letter, index) => (
-        <span key={index} className={classNameLetters}>
-            {showLettersOrNot(letter)}   
-        </span>
-    ))
+    )
          
     const letters = alphabet.toUpperCase().split("").map(letter => {
         const isGuessed = guessedLetters.includes(letter)
@@ -98,7 +93,7 @@ export default function AssemblyEndgame() {
         farewell: !isGameOver && isWrongGuess
     })
 
-    function renderGameStatus(language) {
+    function renderGameStatus() {
         if (!isGameOver && !isWrongGuess) {
             return (
                 <>
@@ -132,7 +127,7 @@ export default function AssemblyEndgame() {
     }
 
     function resetGame() {
-        setCurrentWord(getRandomWord())
+        setCurrentWord(getRandomWord().toUpperCase())
         setGuessedLetters([])
     }
 
@@ -140,7 +135,11 @@ export default function AssemblyEndgame() {
 
     return (
         <main>
-            {isGameWon && <Confetti />}
+            {isGameWon && 
+            <Confetti 
+                recycle={false}
+                numberOfPieces={1000}
+            />}
             <header>
                 <h1>Assembly: Endgame</h1>
                 <p className="description">Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>

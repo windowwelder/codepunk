@@ -19,17 +19,15 @@ main {
 
 .game-status {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background-color: #10A95B;
+    align-items: center;
+    justify-content: center;
+    color: #F9F4DA;
     width: 100%;
     max-width: 350px;
-    height: 59px;
-    padding: 8px 0px 8px 0px;
+    min-height: 60px;
     border-radius: 4px;
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 20px;
+    margin-block: 30px;
 }
 
 section.game-status.won {
@@ -63,11 +61,6 @@ section.game-status.farewell {
     margin: auto;
 }
 
-.language-chip {
-    border-radius: 3px;
-    padding: 4.5px;
-}
-
 section.word {
     display: flex;
     justify-content: center;
@@ -76,7 +69,7 @@ section.word {
     margin-top: 30px;
 }
 
-.letters {
+section.word > span {
     width: 40px;
     height: 40px;
     display: flex;
@@ -88,6 +81,10 @@ section.word {
     font-family: "Hanken Grotesk";
     font-size: 18px;
     font-weight: bold;
+}
+
+section.word > span.missed-letter {
+    color: #EC5D49;
 }
 
 section.keyboard {
@@ -127,6 +124,12 @@ section.keyboard > button.correct {
 
 section.keyboard > button.wrong {
     background-color: #EC5D49;
+}
+
+span.chip {
+    border-radius: 3px;
+    padding: 4.5px;
+    position: relative;
 }
 
 span.chip.lost::before {
