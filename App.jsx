@@ -110,8 +110,7 @@ export default function AssemblyEndgame() {
         if (isGameWon) {
             return (
                 <>
-                    <h2>You win!</h2>
-                    <p>Well done! 🎉</p>
+                    <h2>You win!</h2><p>Well done! 🎉</p>
                 </>
             )
         } else {
