@@ -33,13 +33,11 @@ export default function AssemblyEndgame() {
 
     const languagesChips = languages.map( (el,index) => 
         {
-            const diff = wrongGuessCount - index > 0 ? wrongGuessCount - index : null;
-            const classNameLang = clsx({
-            "chip": !diff,
-            "lost": diff
-        });
+            const isLanguageLost = index < wrongGuessCount
+            const classNameLang = clsx("chip", isLanguageLost && "lost"
+    );
         return (
-                <div
+                <span
                     key={index} 
                     className={classNameLang}  
                     style={{
@@ -47,7 +45,7 @@ export default function AssemblyEndgame() {
                         color: el.color
                     }}>
             {el.name}
-                </div>)
+                </span>)
         }
     )
 

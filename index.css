@@ -126,6 +126,15 @@ section.keyboard > button.wrong {
     background-color: #EC5D49;
 }
 
+section.language-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    max-width: 350px;
+    margin-bottom: 36px;
+}
+
 span.chip {
     border-radius: 3px;
     padding: 4.5px;
@@ -133,23 +142,27 @@ span.chip {
 }
 
 span.chip.lost::before {
-    content: "💀";
+    content: "\1F480";
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
     font-size: 0.85rem;
+    height: 100%;  
+    width: 100%;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.guessed {
-    color: #D9D9D9
-}
-
-.not-guessed {
-    color: #EC5D49
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
