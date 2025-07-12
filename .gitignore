@@ -1,0 +1,27 @@
+# Ignore Windows junk
+desktop.ini
+folderico-gray.ico
+
+# Ignore node modules
+node_modules/
+
+# Ignore logs and cache
+*.log
+.cache/
+dist/
+
+# Ignore environment files
+.env
+.env.local
+
+# Ignore specific project files
+assembly-endgame/temp.txt
+tenzies/debug-output.json
+
+# Ignore all files in assembly-endgame except README
+# assembly-endgame/*
+# !assembly-endgame/README.md
+
+# Ignore all files in tenzies except README
+# tenzies/*
+# !tenzies/README.md
