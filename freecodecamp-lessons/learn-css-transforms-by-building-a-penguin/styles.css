@@ -20,6 +20,7 @@ body {
   position: absolute;
   z-index: 3;
   margin-top: -58px;
+  height: calc(100vh - 300px);
 }
 
 .penguin {
@@ -29,6 +30,9 @@ body {
   margin-top: 75px;
   z-index: 4;
   position: relative;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0ms;
 }
 
 .left-mountain {
@@ -64,6 +68,11 @@ body {
 
 .penguin * {
   position: absolute;
+}
+
+.penguin:active {
+  transform: scale(1.5);
+  cursor: not-allowed;
 }
 
 .penguin-head {
