@@ -19,9 +19,9 @@ assembly-endgame/temp.txt
 tenzies/debug-output.json
 
 # Ignore all files in assembly-endgame except README
-scrimba-learn_react-course/assembly-endgame/*
-!scrimba-learn_react-course/assembly-endgame/README.md
+# scrimba-learn_react-course/assembly-endgame/*
+# !scrimba-learn_react-course/assembly-endgame/README.md
 
 # Ignore all files in tenzies except README
-scrimba-learn_react-course/tenzies/*
-!scrimba-learn_react-course/tenzies/README.md
+# scrimba-learn_react-course/tenzies/*
+# !scrimba-learn_react-course/tenzies/README.md
