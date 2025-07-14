@@ -43,3 +43,9 @@ body {
   left: 110px;
   top: 225px;
 }
+
+.sun {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+}
