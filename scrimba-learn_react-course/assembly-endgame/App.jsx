@@ -4,7 +4,10 @@ import { clsx } from "clsx"
 import { useWindowSize } from 'react-use'
 import { getFarewellText, getRandomWord } from "./utils"
 import Confetti from "react-confetti"
-
+import SkullRain from "./SkullRain"
+/* import ReactRain from "react-rain-animation"
+import "react-rain-animation/lib/style.css"
+import './rain-fix.css'     */
 
 export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = React.useState( () => getRandomWord().toUpperCase())
@@ -143,6 +146,8 @@ export default function AssemblyEndgame() {
                 width={window.innerWidth}
                 height={document.documentElement.scrollHeight}
             />}
+            {isGameLost &&
+            <SkullRain />}
             <header>
                 <h1>Assembly: Endgame</h1>
                 <p className="description">Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
