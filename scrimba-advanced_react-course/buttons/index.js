@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Button from "./Button";
-import { FaMoneyBill } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 function App() {
   return (
     <main>
       <Button style={{color: "green"}} onClick={() => console.log("Logging in...")}>
-        <FaMoneyBill />
-        Buy now!
+        <FcGoogle />
+        Log in with Goggle
       </Button>
     </main>
   )
