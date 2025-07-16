@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 function App() {
   return (
     <main>
-      <Button size="lg">
+      <Button size="lg" color="green">
         <FcGoogle />
         Log in with Goggle
       </Button>
