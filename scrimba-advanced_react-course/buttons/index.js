@@ -6,7 +6,7 @@ import { FaMoneyBill } from "react-icons/fa";
 function App() {
   return (
     <main>
-      <Button>
+      <Button onClick={() => console.log("Logging in...")}>
         <FaMoneyBill />
         Buy now!
       </Button>
