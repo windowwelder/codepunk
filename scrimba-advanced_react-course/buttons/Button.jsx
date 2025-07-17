@@ -1,8 +1,9 @@
 import React from "react"
 
 export default function Button( { children, ...rest}) {
-    const classNameSize = size === "sm" ? "button-small" : size === "lg" ? "button-large" : null;
+    let sizeClass = size ? `button-${size}` : "";
+    const allClasses = classnames(sizeClass, className, variantClass)
     return (
-        <button className={`${sizeClass} ${color}`} {...rest}>{children}</button>
+        <button className={allClasses} {...rest}>{children}</button>
     )
 }

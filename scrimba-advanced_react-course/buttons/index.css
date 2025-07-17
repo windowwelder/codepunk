@@ -31,9 +31,19 @@ button {
     align-items: center;
 }
 
-button > svg {
-    margin-right: 7px;
-    color: green;
-    height: 20px;
-    width: 20px;
+button.success {
+    background: #ECFDF5;
+    color: #047857;
+    border: #047857;
 }
+
+button.warning {
+    background: #FFFBEB;
+    color: #FBBF24;
+    border: #FBBF24;
+}
+
+button.danger {
+    background: #FEF2F2;
+    color: #F87171;
+    border: #F87171;
