@@ -1,7 +1,6 @@
 import React from "react"
 
-export default function MenuItem({ children, open, toggle }) {
-    console.log(open, toggle)
+export default function MenuItem({ children }) {
     return (
         <div className="menu-item">
             {children}

@@ -1,15 +1,9 @@
 import React from "react"
 
-export default function MenuDropdown({ children, open }) {
-    console.log(open, toggle)
+export default function MenuDropdown({ children }) {
     return open ? (
         <div className="menu-dropdown">
-            {React.Children.map(children, (child) => {
-                return React.cloneElement(child, {
-                    open,
-                    toggle
-                })
-            })}
+            {children}
         </div>
     ) : null
 }
