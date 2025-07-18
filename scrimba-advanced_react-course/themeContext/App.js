@@ -5,8 +5,11 @@ import Button from "./Button"
 const ThemeContext = React.createContext()
 
 export default function App() {
+    
+    const [open, setOpen] = React.useState("light");
+    
     return (
-        <ThemeContext.Provider value="light">
+        <ThemeContext.Provider value={open}>
             <div className="container dark-theme">
                 <Header />
                 <Button />
