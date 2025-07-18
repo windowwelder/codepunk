@@ -5,11 +5,16 @@ import Button from "./Button"
 const ThemeContext = React.createContext()
 
 export default function App() {
-    
-    const [open, setOpen] = React.useState("light");
+    const [theme, setTheme] = React.useState("light")
+
+    const toggleTheme = () => {
+        setTheme(
+            theme => theme === "light" ? "dark" : "light"
+        )
+    }
     
     return (
-        <ThemeContext.Provider value={open}>
+        <ThemeContext.Provider value={theme}>
             <div className="container dark-theme">
                 <Header />
                 <Button />
