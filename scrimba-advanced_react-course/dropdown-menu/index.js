@@ -6,13 +6,10 @@ import MenuDropdown from "./Menu/MenuDropdown";
 
 function App() {
   const items={["Tennis", "Pickleball", "Racquetball", "Squash"]};
-  function toggle() {
-        setOpen(prevOpen => !prevOpen)
-    }
   return (
     <>
       <Menu>
-        <MenuButton buttonText="Sports" onClick={toggle}/>
+        <MenuButton>Sports</MenuButton>
         <MenuDropdown items={items}/>
       </Menu>
     </>
