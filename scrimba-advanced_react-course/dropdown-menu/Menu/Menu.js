@@ -11,7 +11,7 @@ export default function Menu({ children }) {
         <div className="menu">
             {React.Children.map(children, (child) => {
                 return React.cloneElement(child, {
-                    isOpen: open, onClick: toggle
+                    open, toggle
                 })
             })}
         </div>

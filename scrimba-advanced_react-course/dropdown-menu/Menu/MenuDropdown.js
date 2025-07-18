@@ -1,9 +1,10 @@
 import React from "react"
 
-export default function MenuDropdown({ children }) {
+export default function MenuDropdown({ open, children }) {
     return (
+        open ? 
         <div className="menu-dropdown">
             {children}
-        </div>
+        </div> : null
     )
 }
