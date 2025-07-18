@@ -3,10 +3,10 @@ import { ThemeContext } from "./App"
 
 export default function Button() {
 
-    const themeClass = React.useContext(ThemeContext)
+    const value = React.useContext(ThemeContext)
     
     return (
-        <button className={`${themeClass}-theme`}>
+        <button cclassName={`${value.theme}-theme`} onClick={value.toggleTheme}>
             Switch Theme
         </button>
     )
