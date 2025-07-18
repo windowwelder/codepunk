@@ -5,12 +5,13 @@ import { FcGoogle } from "react-icons/fc";
 
 function App() {
   return (
-    <main>
-      <Button variant={"success"}>
-        <FcGoogle />
-        Log in with Goggle
-      </Button>
-    </main>
+    <>
+      <Avatar src="./images/bob.jpg" alt="Bob Ziroll" />
+      <br />
+      <Avatar>BZ</Avatar>
+      <br />
+      <Avatar />
+    </>
   )
 }
 
