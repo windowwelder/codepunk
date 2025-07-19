@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Star from "./Star"
-import Toggle from "./Toggle"
+import Toggle from "./Toggle/index"
 
 function App() {
   
   return (
     <>
       <Toggle>
-        <Star />
+        <Toggle.Button>
+          <Star />
+        </Toggle.Button>
       </Toggle>
     </>
   )
