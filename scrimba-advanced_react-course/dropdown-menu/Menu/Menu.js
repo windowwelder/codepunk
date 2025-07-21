@@ -1,12 +1,13 @@
 import React from "react"
-import MenuButton from "./MenuButton"
-import MenuDropdown from "./MenuDropdown"
+import Toggle from "./Toggle/index";
 
 export default function Menu({ children }) {
 
     return (
-            <div className="menu" role="menu" aria-expanded={open} aria-haspopup="true" >
-                {children}
-            </div>
+            <Toggle>
+                <div className="menu" role="menu" aria-expanded={open} aria-haspopup="true" >
+                    {children}
+                </div>
+            </Toggle>
     )
 }
