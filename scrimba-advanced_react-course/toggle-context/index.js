@@ -16,6 +16,17 @@ function App() {
           </Toggle.Off>
         </Toggle.Button>
       </Toggle>
+
+      <Toggle>
+            <Menu>
+              <Toggle.Button>
+                <Toggle.On>
+                  <Menu.Button>"Click me"</Menu.Button>
+                  <Menu.Dropdown><Menu.Item>"option"</Menu.Item></Menu.Dropdown>
+                </Toggle.On>
+              </Toggle.Button>
+            </Menu>
+      </Toggle>
     </>
   )
 }
