@@ -9,7 +9,7 @@ export default function Toggle({ children }) {
     function toggle() {
         setOn(prevOn => !prevOn)
     }
-
+    
     return <ToggleContext.Provider value={{on, toggle}}>{children}</ToggleContext.Provider>
 }
 
