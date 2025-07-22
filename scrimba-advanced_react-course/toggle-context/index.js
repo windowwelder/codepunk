@@ -4,16 +4,12 @@ import Menu from "./dropdown-menu/Menu/index"
 import Star from "./Star"
             
 function App() {
+  const showBox = (on) => on ? <div className="box filled"></div> : <div className="box"></div>;
   return (
     <>
       <Toggle>
         <Toggle.Button>
-          <Toggle.On>
-            <div className="box filled"></div>
-          </Toggle.On>
-          <Toggle.Off>
-            <div className="box"></div>
-          </Toggle.Off>
+          <Toggle.Display>{showBox}</Toggle.Display>
         </Toggle.Button>
       </Toggle>
     </>
