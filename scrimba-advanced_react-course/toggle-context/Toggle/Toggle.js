@@ -6,7 +6,7 @@ const ToggleContext = React.createContext()
 
 export default function Toggle({ children, onToggle }) {
 
-    useToggle();
+    const [on, toggle] = useToggle()
     
     useEffectOnUpdate(onToggle, [on])
 
