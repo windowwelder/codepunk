@@ -4,7 +4,7 @@ import Decision from "./Decision"
 function App() {
     return (
         <div>
-            <Decision sayName={"Change me"} />
+            <Decision sayName={function trueOrFalse(bool) {console.log(bool)}} />
         </div>
     )
 }
