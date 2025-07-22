@@ -6,17 +6,16 @@ import Star from "./Star"
 function App() {
   return (
     <>
-      <Star onChange={ () => console.log("Hot damn!")}/>
-
-      <Menu onOpen={ () => console.log("Goddamnit!")}>
-        <Menu.Button>Menu</Menu.Button>
-        <Menu.Dropdown>
-          <Menu.Item>Home</Menu.Item>
-          <Menu.Item>About</Menu.Item>
-          <Menu.Item>Contact</Menu.Item>
-          <Menu.Item>Blog</Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
+      <Toggle>
+        <Toggle.Button>
+          <Toggle.On>
+            <div className="box filled"></div>
+          </Toggle.On>
+          <Toggle.Off>
+            <div className="box"></div>
+          </Toggle.Off>
+        </Toggle.Button>
+      </Toggle>
     </>
   )
 }
