@@ -4,9 +4,9 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  root: path.resolve(__dirname, 'src/assembly-endgame'),
+  root: path.resolve(__dirname, '.\scrimba-advanced_react-course\solo-projects\component library\badges'),
   plugins: [react()],
   resolve: {
-    dedupe: ['react', 'react-dom'], // 👈 avoids duplicate instances
+    dedupe: ['react', 'react-dom'],
   }
 });
