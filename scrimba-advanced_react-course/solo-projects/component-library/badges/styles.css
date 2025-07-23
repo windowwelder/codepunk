@@ -18,17 +18,33 @@
     --TEXT-INDIGO: #3730A3;
     --TEXT-PURPLE: #5B21B6;
     --TEXT-PINK: #9D174D;
+
+    /* BADGES' SHAPES */
+    --SHAPE-SQUARE: 4px;
+    --SHAPE-PILL: 12px;
 }
 
-/* BADGE'S GENERAL STYLE */
+/* BADGE'S SQUARE SHAPE */
 .badge {
     padding: 12px 2px 12px 2px; 
     width: 4rem;
     margin: auto;
     text-align: center;
     text-justify: center;
+    border-radius: var(--SHAPE-SQUARE);
 }
 
+/* BADGE'S PILL SHAPE */
+.badge.pill {
+    padding: 12px 2px 12px 2px; 
+    width: 4rem;
+    margin: auto;
+    text-align: center;
+    text-justify: center;
+    border-radius: var(--SHAPE-PILL);
+}
+
+/* BADGE'S COLOR SPECS */
 .gray {
     background-color: var(--GRAY);
     color: var(--TEXT-GRAY);

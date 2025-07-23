@@ -5,7 +5,7 @@ import Badge from "./Badge"
 function App() {
     /* const allClassNames = { gray, red, yellow, green, blue, indigo, purple, pink}; */
     return (
-        <Badge color="red">Badge</Badge>
+        <Badge color="red" shape="square">Badge</Badge>
     )
 }
 
