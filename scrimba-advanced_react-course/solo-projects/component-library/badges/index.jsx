@@ -3,8 +3,9 @@ import ReactDOM from "react-dom/client";
 import Badge from "./Badge"
 
 function App() {
+    /* const allClassNames = { gray, red, yellow, green, blue, indigo, purple, pink}; */
     return (
-        <Badge>Badge</Badge>
+        <Badge color="red">Badge</Badge>
     )
 }
 

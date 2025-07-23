@@ -1,3 +1,14 @@
+* {
+    --GRAY: #F3F4F6;
+    --RED: #FEE2E2;
+    --YELLOW: #FEF3C7;
+    --GREEN: #D1FAE5;
+    --BLUE: #DBEAFE;
+    --INDIGO: #E0E7FF;
+    --PURPLE: #EDE9FE;
+    --PINK: #FCE7F3;
+}
+
 .badge {
     display: flex;
 }
