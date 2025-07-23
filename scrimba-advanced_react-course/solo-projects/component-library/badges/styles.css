@@ -8,7 +8,7 @@
     --INDIGO: #E0E7FF;
     --PURPLE: #EDE9FE;
     --PINK: #FCE7F3;
-    
+
     /* BADGES' TEXT COLORS */
     --TEXT-GRAY: #1F2937;
     --TEXT-RED: #991B1B;
@@ -22,4 +22,44 @@
 
 .badge {
     display: flex;
+}
+
+.gray {
+    background-color: var(--GRAY);
+    color: var(--TEXT-GRAY);
+}
+
+.red {
+    background-color: var(--RED);
+    color: var(--TEXT-RED);
+}
+
+.yellow {
+    background-color: var(--YELLOW);
+    color: var(--TEXT-YELLOW);
+}
+
+.green {
+    background-color: var(--GREEN);
+    color: var(--TEXT-GREEN);
+}
+
+.blue {
+    background-color: var(--BLUE);
+    color: var(--TEXT-BLUE);
+}
+
+.indigo {
+    background-color: var(--INDIGO);
+    color: var(--TEXT-INDIGO);
+}
+
+.purple {
+    background-color: var(--PURPLE);
+    color: var(--TEXT-PURPLE);
+}
+
+.pink {
+    background-color: var(--PINK);
+    color: var(--TEXT-PINK);
 }
