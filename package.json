@@ -3,7 +3,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "dev:assembly": "npx vite scrimba-learn_react-course/assembly-endgame",
-    "dev:badges": "vite"
+    "dev:badges": "npx vite scrimba-advanced_react-course/solo-projects/component-library/badges"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.6.0",
