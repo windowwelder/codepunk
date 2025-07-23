@@ -20,8 +20,13 @@
     --TEXT-PINK: #9D174D;
 }
 
+/* BADGE'S GENERAL STYLE */
 .badge {
-    display: flex;
+    padding: 12px 2px 12px 2px; 
+    width: 4rem;
+    margin: auto;
+    text-align: center;
+    text-justify: center;
 }
 
 .gray {
