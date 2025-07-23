@@ -1,4 +1,5 @@
 * {
+    /* BADGES' COLORS */
     --GRAY: #F3F4F6;
     --RED: #FEE2E2;
     --YELLOW: #FEF3C7;
@@ -7,6 +8,16 @@
     --INDIGO: #E0E7FF;
     --PURPLE: #EDE9FE;
     --PINK: #FCE7F3;
+    
+    /* BADGES' TEXT COLORS */
+    --TEXT-GRAY: #1F2937;
+    --TEXT-RED: #991B1B;
+    --TEXT-YELLOW: #FEF3C7;
+    --TEXT-GREEN: #065F46;
+    --TEXT-BLUE: #1E40AF;
+    --TEXT-INDIGO: #3730A3;
+    --TEXT-PURPLE: #5B21B6;
+    --TEXT-PINK: #9D174D;
 }
 
 .badge {
