@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes } from "react-router-dom"
 
 function App() {
   return (
@@ -7,4 +8,9 @@ function App() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(
+<BrowserRouter>
+    <Routes>
+    </Routes>
+</BrowserRouter>
+);
