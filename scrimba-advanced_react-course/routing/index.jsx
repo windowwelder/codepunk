@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </nav>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
