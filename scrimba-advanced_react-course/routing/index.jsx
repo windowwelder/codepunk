@@ -9,10 +9,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-        </nav>
+        <header>
+          <Link to="/">#VANLIFE</Link>
+          <nav>
+            <Link to="/about">About</Link>
+          </nav>
+        </header>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
