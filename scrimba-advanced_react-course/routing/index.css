@@ -6,6 +6,18 @@ html, body {
     margin: 0;
     padding: 0;
 }
-nav.a {
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #FFF7ED;
+    height: 4rem;
+}
+
+nav > a {
     text-decoration: none;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    margin: 1rem;
+    color: #4D4D4D;
 }
