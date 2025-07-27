@@ -7,17 +7,42 @@ html, body {
     padding: 0;
 }
 
+header {
+    background-color: #FFF7ED;
+    display: flex;
+    align-items: center;
+}
+
+.home-link {
+    margin-right: auto;
+    margin-left: 1rem;
+}
+
 nav {
     display: flex;
+    width: 9rem;
     justify-content: flex-end;
-    background-color: #FFF7ED;
-    height: 4rem;
+    margin-right: 1rem;
 }
 
 nav > a {
     text-decoration: none;
-    font-family: Inter, sans-serif;
+    font-family: sans-serif;
     font-size: 1rem;
     margin: 1rem;
     color: #4D4D4D;
+}
+
+.page-container {
+    margin: 0 auto;
+    max-width: 50rem;
+}
+
+.home-container {
+    margin-top: 5rem;
+}
+
+.home-container > h1 {
+    width: 40rem;
+    margin: auto;
 }

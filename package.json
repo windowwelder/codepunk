@@ -4,7 +4,8 @@
     "dev": "vite",
     "dev:assembly": "npx vite scrimba-learn_react-course/assembly-endgame",
     "dev:badges": "npx vite scrimba-advanced_react-course/solo-projects/component-library/badges",
-    "dev:banners": "npx vite scrimba-advanced_react-course/solo-projects/component-library/banners"
+    "dev:banners": "npx vite scrimba-advanced_react-course/solo-projects/component-library/banners",
+    "dev:routing": "npx vite scrimba-advanced_react-course/routing"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.6.0",
@@ -17,6 +18,7 @@
     "react-confetti": "^6.4.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-router-dom": "^7.7.1",
     "react-use": "^17.6.0"
   }
 }
