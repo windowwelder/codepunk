@@ -26,5 +26,5 @@ function App() {
 ReactDOM
   .createRoot(document.getElementById('root'))
   .render(<div className="page-container">
-            <App />;
+            <App />
           </div>);
