@@ -9,13 +9,6 @@ import Vans from "./pages/Vans"
 function App() {
   return (
     <BrowserRouter>
-        <header>
-          <Link to="/" className="home-link">#VANLIFE</Link>
-          <nav>
-            <Link to="/about">About</Link>
-            <Link to="/about">Vans</Link>
-          </nav>
-        </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
