@@ -28,6 +28,8 @@ function App() {
             <Route path="host" element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVansDetail />} />
           </Route>
         </Route>
       </Routes>
