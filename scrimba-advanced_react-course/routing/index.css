@@ -58,3 +58,9 @@ nav > a {
 .home-hero-image {
     width:100%;
 }
+
+.link-active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+}
