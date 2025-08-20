@@ -62,6 +62,9 @@ export default function Vans() {
                     className="van-type clear-filters"
                 >Clear filter</button> 
                 : null}
+            <div className="van-list">
+                {vanElements}
+            </div>
         </div>
         
     )
