@@ -6,7 +6,6 @@ export default function VanDetail() {
     const location = useLocation()
    
     const [van, setVan] = React.useState(null)
-    const [searchParams,setSearchParams] = useSearchParams()
 
     React.useEffect(() => {
         fetch(`/api/vans/${params.id}`)
@@ -14,10 +13,12 @@ export default function VanDetail() {
             .then(data => setVan(data))
     }, [params.id])
 
+    const search = location.state?.search || ""
+
     return (
         <div className="van-detail-container">
             <Link
-                to={location.search ? `..?${searchParams.toString()}` : ".."}
+                to={`..${search}`}
                 relative="path"
                 className="back-button"
             >&larr; <span>Back to all vans</span></Link>
