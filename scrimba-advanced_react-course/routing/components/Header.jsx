@@ -5,11 +5,35 @@ export function Header() {
     return (
       <header>
         <Link className="site-logo" to="/">#VanLife</Link>
-        <nav>
-          <NavLink to="/host" className={ ({isActive}) => isActive ? "link-active" : null}>Host</NavLink>
-          <NavLink to="/about" className={ ({isActive}) => isActive ? "link-active" : null}>About</NavLink>
-          <NavLink to="/vans" className={ ({isActive}) => isActive ? "link-active" : null}>Vans</NavLink>
-        </nav>
+        <header>
+            <Link className="site-logo" to="/">#VanLife</Link>
+            <nav>
+                <NavLink 
+                    to="host"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Host
+                </NavLink>
+                <NavLink 
+                    to="about"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    About
+                </NavLink>
+                <NavLink 
+                    to="vans"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Vans
+                </NavLink>
+                <Link to="login" className="login-link">
+                    <img 
+                        src={imageUrl}
+                        className="login-icon"
+                    />
+                </Link>
+            </nav>
+        </header>
       </header>
     )
 }
