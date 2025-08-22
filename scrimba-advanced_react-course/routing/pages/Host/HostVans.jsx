@@ -4,7 +4,7 @@ import { getHostVans } from "../../api"
 
 export default function HostVans() {
     const [vans, setVans] = React.useState([])
-
+    const [loading, setLoading] = React.useState(false)
     const { id } = useParams()
 
     React.useEffect(() => {
@@ -38,6 +38,10 @@ export default function HostVans() {
             </div>
         </Link>
     ))
+
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
 
     return (
         <section>
