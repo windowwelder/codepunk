@@ -5,6 +5,7 @@ import { getVans } from "../../api"
 export default function VanDetail() {
     const params = useParams()
     const location = useLocation()
+    const [loading, setLoading] = React.useState(false)
     
     React.useEffect(() => {
         async function loadVans() {
@@ -24,6 +25,10 @@ export default function VanDetail() {
     const [van, setVan] = React.useState(null)
 
     const search = location.state?.search || ""
+
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
 
     return (
         <div className="van-detail-container">
