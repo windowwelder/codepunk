@@ -6,6 +6,7 @@ export default function HostVans() {
     const [vans, setVans] = React.useState([])
     const [loading, setLoading] = React.useState(false)
     const { id } = useParams()
+    const [error, setError] = React.useState(null)
 
     React.useEffect(() => {
         async function loadVans() {
@@ -41,6 +42,10 @@ export default function HostVans() {
 
     if (loading) {
         return <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
     }
 
     return (
