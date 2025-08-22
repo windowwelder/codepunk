@@ -1,17 +1,27 @@
 import React from "react"
 import { Link, useParams, useLocation, useSearchParams } from "react-router-dom"
+import { getVans } from "../../api"
 
 export default function VanDetail() {
     const params = useParams()
     const location = useLocation()
-   
-    const [van, setVan] = React.useState(null)
-
+    
     React.useEffect(() => {
-        fetch(`/api/vans/${params.id}`)
-            .then(res => res.json())
-            .then(data => setVan(data))
-    }, [params.id])
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getVans(id)
+                setVan(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadVans()
+    }, [id])
+
+    const [van, setVan] = React.useState(null)
 
     const search = location.state?.search || ""
 
