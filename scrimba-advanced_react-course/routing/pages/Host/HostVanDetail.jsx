@@ -4,6 +4,7 @@ import { getHostVans } from "../../api"
 
 export default function HostVanDetail() {
     const [currentVan, setCurrentVan] = React.useState(null)
+    const [loading, setLoading] = React.useState(false)
 
     const { id } = useParams()
 
@@ -23,7 +24,7 @@ export default function HostVanDetail() {
         loadVans()
     }, [id])
 
-    if (!currentVan) {
+    if (loading) {
         return <h1>Loading...</h1>
     }
 
