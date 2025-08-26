@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "firebase": "^12.1.0",
     "framer-motion": "^12.23.5",
     "miragejs": "^0.1.48",
     "react": "^19.1.0",

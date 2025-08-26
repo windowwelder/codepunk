@@ -1,3 +1,21 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore"
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAIZ3lt9XRwJRzIsRHplNwFRjw-cz-D0Zw",
+  authDomain: "codepunk-430e2.firebaseapp.com",
+  projectId: "codepunk-430e2",
+  storageBucket: "codepunk-430e2.firebasestorage.app",
+  messagingSenderId: "1030300197",
+  appId: "1:1030300197:web:145c275e2a200ccf4c15cc"
+};
+
+const app = initializeApp(firebaseConfig);
+
+
+
+
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(() => resolve(), ms))
 }
