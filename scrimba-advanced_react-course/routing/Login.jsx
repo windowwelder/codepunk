@@ -16,7 +16,7 @@ export default function Login() {
             .then(data => {
                 console.log(data)
                 setError(null)
-                navigate("/host")
+                navigate(`${location.state?.from === "/login" ? "/host" : location.state.from}`)
             }).catch(
                 err => {
                     const message = err?.message   
