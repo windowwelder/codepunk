@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"
+import { getFirestore, collection, getDocs } from "firebase/firestore/lite"
 
+// database is named 'vanlife'. if you're gonna use it for another projects, it's better to rename it to 'codepunk' then
 const firebaseConfig = {
   apiKey: "AIzaSyAIZ3lt9XRwJRzIsRHplNwFRjw-cz-D0Zw",
   authDomain: "codepunk-430e2.firebaseapp.com",
@@ -11,16 +12,27 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
 
-
-
+const vansCollectionRef = collection(db, "vans")
 
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(() => resolve(), ms))
 }
 
-export async function getVans(id) {
+export async function getVans() {
+    const snapshot = await getDocs(vansCollectionRef)
+    const vans = snapshot.docs.map(
+        doc => ({
+            ...doc.data(),
+            id: doc.id
+        })
+    )
+    return vans
+}
+
+/* export async function getVans(id) {
     const url = id ? `/api/vans/${id}` : "/api/vans"
     const res = await fetch(url)
     if (!res.ok) {
@@ -32,7 +44,7 @@ export async function getVans(id) {
     }
     const data = await res.json()
     return data.vans
-}
+} */
 
 export async function getHostVans(id) {
     const url = id ? `/api/host/vans/${id}` : "/api/host/vans"
