@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite"
+import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore/lite"
 
 // database is named 'vanlife'. if you're gonna use it for another projects, it's better to rename it to 'codepunk' then
 const firebaseConfig = {
@@ -30,6 +30,16 @@ export async function getVans() {
         })
     )
     return vans
+}
+
+export async function getVan(id) {
+    const docRef = doc(db, "vans", id)
+    const snapshot = await getDoc(docRef)
+    const van = {
+        ...snapshot.data(),
+        id: doc.id
+        }
+    return van
 }
 
 /* export async function getVans(id) {
