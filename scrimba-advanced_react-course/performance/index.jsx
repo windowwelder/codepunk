@@ -1,14 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-/* import ProductsList from "./ProductsList" */
-
-const ProductsList = React.lazy(() => {
-  return import("./ProductsList")
-})
+import Product from "./Product"
+import productsData from "./data"
 
 function App() {
   const [count, setCount] = React.useState(0)
-  const [showProducts, setShowProducts] = React.useState(false)
+  const [darkMode, setDarkMode] = React.useState(false)
 
   function increment() {
     setCount(prevCount => prevCount + 1)
@@ -16,6 +13,11 @@ function App() {
 
   function decrement() {
     setCount(prevCount => prevCount - 1)
+  }
+
+  const productStyles = {
+    backgroundColor: darkMode ? "#2b283a" : "whitesmoke",
+    color: darkMode ? "white" : "#2b283a"
   }
 
   return (
@@ -31,23 +33,23 @@ function App() {
       <br />
       <button
         className="button"
-        onClick={() => setShowProducts(prev => !prev)}
+        onClick={() => setDarkMode(prev => !prev)}
       >
-        Show Products
+        {darkMode ? "Light" : "Dark"}
             </button>
       <br />
       <br />
-      <React.Suspense fallback={<h2>Loading...</h2>}>
         <div className="products-list">
-          {showProducts && <ProductsList />}
+          {
+          productsData.map(product => (
+            <Product key={product.id} product={product} style={productStyles} />
+          ))
+        }
         </div>
-      </React.Suspense>
     </>
   )
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <App />
-  </React.StrictMode>
 )
