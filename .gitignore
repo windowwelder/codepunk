@@ -17,6 +17,7 @@ dist/
 # Ignore specific project files
 assembly-endgame/temp.txt
 tenzies/debug-output.json
+Advanced React.pdf
 
 # Ignore all files in assembly-endgame except README
 # scrimba-learn_react-course/assembly-endgame/*
