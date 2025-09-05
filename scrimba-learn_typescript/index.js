@@ -19,3 +19,9 @@ function placeOrder(pizzaObjName) {
     orderQueue.push(newOrderObject)
     return newOrderObject
 }
+
+function completeOrder(orderId) {
+    const selectedOrder = orderQueue.find( order => order.orderId === orderId );
+    selectedOrder.status = "completed";
+    return selectedOrder
+}
