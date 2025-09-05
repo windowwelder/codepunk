@@ -42,9 +42,13 @@ function placeOrder(pizzaName: string) {
 }
 
 function completeOrder(orderId: number) {
-    const order = orderQueue.find( order => order.id === orderId );
-    order.status = "completed";
-    return order
+    const order = orderQueue.find(order => order.id === orderId)
+    if (order) {
+        order.status = "completed"
+        return order
+    } else {
+        return null
+    }
 }
 
 addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
