@@ -1,3 +1,8 @@
+type Pizza = {
+    name: string,
+    price: number
+}
+
 type Menu = {
     name: string,
     price: number
