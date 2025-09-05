@@ -3,7 +3,7 @@ import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "fi
 
 // database is named 'vanlife'. if you're gonna use it for another projects, it's better to rename it to 'codepunk' then
 const firebaseConfig = {
-  apiKey: "AIzaSyAIZ3lt9XRwJRzIsRHplNwFRjw-cz-D0Zw",
+  apiKey: "",
   authDomain: "codepunk-430e2.firebaseapp.com",
   projectId: "codepunk-430e2",
   storageBucket: "codepunk-430e2.firebasestorage.app",
