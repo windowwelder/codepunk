@@ -18,7 +18,7 @@ const menu = [
 type Order = {
     id: number,
     pizza: Menu,
-    status: string
+    status: "ordered" | "completed"
 }
 
 let cashInRegister = 100
@@ -49,6 +49,10 @@ function completeOrder(orderId: number) {
     } else {
         return null
     }
+}
+
+function getPizzaDetail(identifier: string | number ) {
+    
 }
 
 addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
