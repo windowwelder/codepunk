@@ -9,10 +9,10 @@ type Menu = {
 }
 
 const menu = [
-    { name: "Margherita", price: 8 },
-    { name: "Pepperoni", price: 10 },
-    { name: "Hawaiian", price: 10 },
-    { name: "Veggie", price: 9 },
+    { id: 1, name: "Margherita", price: 8 },
+    { id: 2, name: "Pepperoni", price: 10 },
+    { id: 3, name: "Hawaiian", price: 10 },
+    { id: 4id: , , name: "Veggie", price: 9 },
 ]
 
 type Order = {
@@ -64,13 +64,13 @@ function getPizzaDetail(identifier: string | number ): Pizza | undefined {
     }
 }
 
-addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
-addNewPizza({ name: "BBQ Chicken", price: 12 })
-addNewPizza({ name: "Spicy Sausage", price: 11 })
+/* addNewPizza({ id: 5, name: "Chicken Bacon Ranch", price: 12 })
+addNewPizza({ id: 6, name: "BBQ Chicken", price: 12 })
+addNewPizza({ id: 7, name: "Spicy Sausage", price: 11 })
 
 placeOrder("Chicken Bacon Ranch")
 completeOrder(1)
 
 console.log("Menu:", menu)
 console.log("Cash in register:", cashInRegister)
-console.log("Order queue:", orderQueue)
+console.log("Order queue:", orderQueue) */
