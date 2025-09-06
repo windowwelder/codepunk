@@ -52,7 +52,15 @@ function completeOrder(orderId: number) {
 }
 
 function getPizzaDetail(identifier: string | number ) {
-    
+    if (typeof identifier === "string") {
+        return menu.find( pizza => pizza.name === identifier )
+    }
+    else if (typeof identifier === "number") {
+        return menu.find( pizza => pizza.id === identifier)
+    }
+    else {
+        return console.error("the variable passed to getPizzaDetail neither string nor number")
+    }
 }
 
 addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
