@@ -8,13 +8,6 @@ type Menu = {
     price: number
 }
 
-const menu = [
-    { id: 1, name: "Margherita", price: 8 },
-    { id: 2, name: "Pepperoni", price: 10 },
-    { id: 3, name: "Hawaiian", price: 10 },
-    { id: 4id: , , name: "Veggie", price: 9 },
-]
-
 type Order = {
     id: number,
     pizza: Menu,
@@ -23,7 +16,22 @@ type Order = {
 
 let cashInRegister = 100
 let nextOrderId: number = 1
+let nextPizzaId = 1
 const orderQueue: Order[] = []
+
+const initialMenu: Pizza[] = [
+    { id: 1, name: "Margherita", price: 8 },
+    { id: 2, name: "Pepperoni", price: 10 },
+    { id: 3, name: "Hawaiian", price: 10 },
+    { id: 4, name: "Veggie", price: 9 },
+]
+
+const menu: Pizza[] = []
+
+function addNewPizza(pizzaObj: Pizza): void {
+    pizzaObj.id = nextPizzaId++
+    menu.push(pizzaObj)
+}
 
 function addNewPizza(pizzaObj: Menu) {
     menu.push(pizzaObj)
