@@ -29,11 +29,11 @@ function addNewPizza(pizzaObj: Menu) {
     menu.push(pizzaObj)
 }
 
-function placeOrder(pizzaName: string) {
+function placeOrder(pizzaName: string): Order | null {
     const selectedPizza = menu.find( pizza => pizza.name === pizzaName )
     if (!selectedPizza) {
         console.error(`${pizzaName} does not exist in the menu`)
-        return
+        return null
     }
     cashInRegister += selectedPizza.price;
     const newOrder: Order = { id: nextOrderId++, pizza: selectedPizza, status: "ordered" }
@@ -41,7 +41,7 @@ function placeOrder(pizzaName: string) {
     return newOrder
 }
 
-function completeOrder(orderId: number) {
+function completeOrder(orderId: number): Order | null {
     const order = orderQueue.find(order => order.id === orderId)
     if (order) {
         order.status = "completed"
@@ -51,7 +51,7 @@ function completeOrder(orderId: number) {
     }
 }
 
-function getPizzaDetail(identifier: string | number ) {
+function getPizzaDetail(identifier: string | number ): Pizza | undefined {
     if (typeof identifier === "string") {
         return menu.find( pizza => pizza.name.toLowerCase() === identifier.toLowerCase() )
     }
@@ -59,7 +59,8 @@ function getPizzaDetail(identifier: string | number ) {
         return menu.find( pizza => pizza.id === identifier)
     }
     else {
-        return console.error("the variable passed to getPizzaDetail neither string nor number")
+        console.error("the variable passed to getPizzaDetail neither string nor number")
+        return 
     }
 }
 
