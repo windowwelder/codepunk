@@ -1,4 +1,5 @@
 type Pizza = {
+    id: number
     name: string,
     price: number
 }
@@ -30,10 +31,6 @@ const menu: Pizza[] = []
 
 function addNewPizza(pizzaObj: Pizza): void {
     pizzaObj.id = nextPizzaId++
-    menu.push(pizzaObj)
-}
-
-function addNewPizza(pizzaObj: Menu) {
     menu.push(pizzaObj)
 }
 
