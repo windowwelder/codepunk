@@ -1,6 +1,6 @@
 export default function Die(props) {
     const theme = {
-        size: "30px"
+        size: "70px"
     }
     const styles = {
         backgroundColor: props.isHeld ? "#59E391" : null,
