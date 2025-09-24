@@ -41,6 +41,7 @@ button {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 2;
     align-self: center;
+    gap: 20px;
 }
 
 .dice-container button {
