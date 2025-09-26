@@ -15,34 +15,33 @@ export default function App() {
 
         const [dice, setDice] = useState(generateAllDice())
 
-        const [value, setValue] = useState(null)
+        const [value, setValue] = useState(0)
         
         const hold = (id) => {
             setDice(prev => {
                 const d = prev.find(d => d.id === id)
+                const flipDice = prev.map( dice => dice.id === d.id ? {...dice, isHeld: !dice.isHeld} : dice )
                 if (value === 0) {
-                    value = d.value
-                    return {...d,isHeld: !isHeld}
+                    setValue(d.value)
+                    return flipDice
                 }
                 else {
                     if (value === d.value) {
-                        if (isHeld === true) {
-                            if (prev.filter(d => d.isHeld === true).length > 1) {
-                                return {...d,isHeld: !isHeld}
+                        if (d.isHeld === true) {
+                            if (prev.filter(dice => dice.isHeld === true).length > 1) {
+                                return flipDice
                             }
                             else {
-                                setValue(
-                                    prevV => prevV = 0
-                                )
-                                return {...d,isHeld: !isHeld}
+                                setValue(0)
+                                return flipDice
                             }
                         }
                         else {
-                            return {...d,isHeld:!isHeld}
+                            return flipDice
                         }
                     }
                     else {
-                        return d
+                        return prev
                     }
                 }
                 
