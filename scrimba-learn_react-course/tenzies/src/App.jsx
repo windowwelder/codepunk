@@ -62,8 +62,8 @@ export default function App() {
             />)
         
         const newGame = () => {
+            setDice(generateAllDice())
             setValue(0)
-            setDice(prev => prev.map( die => !die.isHeld ))
             updateAllDice()
         }
 
